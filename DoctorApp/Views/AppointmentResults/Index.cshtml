@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DoctorApp.Models.AppointmentResult>
+
+@{
+    ViewBag.Title = "Citas";
+}
+
+<h2>Resultados de las citas</h2>
+
+
+    @Html.ActionLink("Crear Nuevo resultados", "Create", null, new {@class="btn btn-primary "})
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Resultados de las citas</h6>
+    </div>
+    <div class="card-body">
+        <div class="table table-responsive">
+            <table id="dataTable" class=" table">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appointment.Comments)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Recommendations)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sintomas)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appointment.Comments)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Recommendations)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sintomas)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new {@class= "btn btn-secondary" }) |
+                                @Html.ActionLink("Borrar", "Delete", new { id = item.Id }, new { @class = "btn btn-secondary" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

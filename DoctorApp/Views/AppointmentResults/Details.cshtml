@@ -1,0 +1,50 @@
+﻿@model DoctorApp.Models.AppointmentResult
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AppointmentResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recommendations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recommendations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sintomas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sintomas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

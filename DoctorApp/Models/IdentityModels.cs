@@ -25,6 +25,16 @@ namespace DoctorApp.Models
         {
         }
 
+        public DbSet<Patient> Patients { get; set; }
+
+        public DbSet<Doctor> Doctors { get; set; }
+
+        public DbSet<Appointment> Appointments { get; set; }
+
+        public DbSet<AppointmentResult> AppointmentResults { get; set; }
+
+        public DbSet<WorkShift> WorkShifts { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
